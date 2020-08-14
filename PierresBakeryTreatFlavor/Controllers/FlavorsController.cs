@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using PierresBakeryTreatFlavor.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using PierresBakeryTreatFlavor.Models;
 using PierresBakeryTreatFlavor.ViewModels;
 
 namespace PierresBakeryTreatFlavor.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresBakeryTreatFlavorContext _db;
