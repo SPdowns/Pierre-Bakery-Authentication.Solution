@@ -45,12 +45,11 @@ __
 | Create a treat with Name, Description |
 | Create a flavor with Name and Description |
 | Edit Treat or Flavor and be able to link them together |
-|
 
 
 ## Known Bugs
 
-_No known bugs_
+_Issues with routes being and null values_
 
 ## Support and contact details
 
