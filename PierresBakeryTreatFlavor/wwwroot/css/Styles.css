@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+  background-image: url(../img/background.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: rgba(245, 245, 220, 0.514);
+  height: 400px;
+}
