@@ -12,7 +12,6 @@ using PierresBakeryTreatFlavor.ViewModels;
 
 namespace PierresBakeryTreatFlavor.Controllers
 {
-  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresBakeryTreatFlavorContext _db;
@@ -29,6 +28,8 @@ namespace PierresBakeryTreatFlavor.Controllers
     {
       return View(_db.Flavors.ToList());
     }
+
+    [Authorize]
     public ActionResult Create()
     {
       return View();
@@ -41,7 +42,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize]
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors
@@ -50,6 +51,7 @@ namespace PierresBakeryTreatFlavor.Controllers
         .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
+    [Authorize]
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -63,7 +65,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);

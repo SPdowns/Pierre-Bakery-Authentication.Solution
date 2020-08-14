@@ -11,7 +11,6 @@ using PierresBakeryTreatFlavor.Models;
 
 namespace PierresBakeryTreatFlavor.Controllers
 {
-  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierresBakeryTreatFlavorContext _db;
@@ -28,6 +27,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       var userTreats  = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
       return View(userTreats);
     }
+    [Authorize]
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
@@ -47,6 +47,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    [Authorize]
     public ActionResult Details (int id)
     {
       var thisTreat = _db.Treats
@@ -55,6 +56,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
+    [Authorize]
     public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -72,6 +74,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
@@ -94,7 +97,7 @@ namespace PierresBakeryTreatFlavor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize]
     public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
