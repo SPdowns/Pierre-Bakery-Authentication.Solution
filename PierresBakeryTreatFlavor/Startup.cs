@@ -26,11 +26,11 @@ namespace PierresBakeryTreatFlavor
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<RecipeBoxContext>(options => options
+        .AddDbContext<PierresBakeryTreatFlavorContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
-              .AddEntityFrameworkStores<RecipeBoxContext>()
+              .AddEntityFrameworkStores<PierresBakeryTreatFlavorContext>()
               .AddDefaultTokenProviders();
       services.Configure<IdentityOptions>(options =>
       {
