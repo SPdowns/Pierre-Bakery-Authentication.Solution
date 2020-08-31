@@ -4,7 +4,7 @@
 </strong></h1>
 
 
-#### A practice in Authentication with Identity within C# & .Net through an application that is based out on Pierre's Bakery._ , 2020 ver 1.0_
+#### A practice in Authentication with Identity within C# & .Net through an application that is based out on Pierre's Bakery. _2020 ver 1.0_
 
 #### By _Sean Downs_
 
